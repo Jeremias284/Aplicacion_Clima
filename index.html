@@ -9,30 +9,34 @@
 </head>
 <body>
     <div class=" flex-conteiner ">
-        <section class="parteIzquierda">
-            <div class="header">
-                <div class="buscador">
+        <section class="parteIzquierda" id="parteIzquierda">
+            <div class="header" id="header">
+                <div class="buscador" id="header">
                    <!-- Imegen -->
-                   <input type="text" name="buscar" id="inputValor" placeholder="Search for places ..." value="Rosario">
-                   <input type="submit" value="search" id="buscar" class="buscar">
+                   <form class="search_submit" id="search_submit">
+                    <input type="text" class="search" id="search_input" placeholder="Search for places...">
+                    <button type="submit"></button>
+                   </form>
+                   <!-- <input type="text" name="buscar" id="inputValor" placeholder="Search for places ..." value="Ingerese una ciudad...."> -->
+                   <!-- <input type="submit" value="Buscar" id="buscar" class="buscar"> -->
                 </div>
-                <div class="mira">
+                <div class="mira" id="mira">
                 <!-- imagen -->
                 </div>
             </div>
-            <div class="clima_Actual">
+            <div class="clima_Actual" id="clima_Actual">
                 <img src="img/09n.png" alt="">
-                <div class="grados">
-                    <p id="grados_Actual">°C</p>
+                <div class="grados" id="grados">
+                    <p id="grados_Actual">12°C</p>
                 </div>
                 <h2 id="fecha_Actual">Monday, 16:00</h2>
                 <p id="clima_Actual"> Mostly Cloudy</p>
                 <p>Rian -30%</p>
-                <img src="img/rosario.jpg" alt="">
+                <img src="img/NewYork.jpg" alt="">
             </div>
         </section>
-        <section class="parteDerecha">
-            <div class="header">
+        <section class="parteDerecha" id="parteDerecha">
+            <div class="header" id="header2">
                 <div class="enlaces">
                     <a href="#">Today</a>
                     <a href="#">Week</a>
@@ -105,7 +109,7 @@
                     </div>
                     <div class="informacion_destacada">
                         <h3>Wind Status</h3>
-                        <p id="estado_del_viento" style=" font-size:21px ">km/h</p>
+                        <p id="viento_Actual" style=" font-size:21px ">km/h</p>
                         <div class="detalle">
                             <!-- imagen -->
                             <p>WSW</p>
@@ -132,7 +136,7 @@
                         <!-- imagen -->
                     </div>
                 </div>
-                <div class="informacion_destacada">
+                <div class="informacion_destacada" >
                     <h3>Air Quality</h3>
                     <div class="detalle">
                         <p>Unhealthy</p>

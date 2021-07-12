@@ -1,6 +1,7 @@
 body{
-    background-color: rgb(235, 216, 216);
+    background-color: rgb(202, 196, 196);
     padding: 20px 40px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .flex-conteiner{
@@ -60,26 +61,6 @@ body{
     text-decoration: none;
 }
 
-input[type="text"]{
-    border: 0;
-    height: 22px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-    color: rgb(0, 0, 0);
-}
-
-input[type="submit"]{
-    border: 0;
-    border-radius: 7px;
-    height: 28px;
-    padding: 3px 5px;
-    margin-bottom: 5px;
-    background-color: rgb(246, 246, 248);
-}
-
-input[type="submit"]:hover{
-    background-color: rgb(255, 255, 255);
-}
 
 .grados p{
     font-size: 70px;
@@ -102,6 +83,7 @@ input[type="submit"]:hover{
 .clima_Actual img{
     margin-top: 20px;
     width: 100%;
+  
 }
 
 
@@ -172,10 +154,9 @@ input[type="submit"]:hover{
 
 }
 
-
 .dia img{
     width: 90%;
-    height: 90%;
+    height: 90px;
 }
 
 .detalle{
@@ -222,6 +203,28 @@ input[type="submit"]:hover{
     
 }
 
+.search_submit{
+    display: flex;
+}
+.search_submit > button{
+    visibility:hidden;
+}
+
+.search{
+    width: 100%;
+    padding:  0.5rem;
+    border-radius: .5rem;
+    border: none
+}
+
+.search:focus{
+    outline: none;
+}
+.dia img{
+    width: 50%;
+    height: 70px;
+
+}
 @media screen and(max-width: 610px) {
     .dias{
         flex-direction: column;
