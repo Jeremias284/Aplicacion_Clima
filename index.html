@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicacion_Clima_Jere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class=" flex-conteiner ">
+        <section class="parteIzquierda">
+            <div class="header">
+                <div class="buscador">
+                   <!-- Imegen -->
+                   <input type="text" name="buscar" id="inputValor" placeholder="Search for places ..." value="Rosario">
+                   <input type="submit" value="search" id="buscar" class="buscar">
+                </div>
+                <div class="mira">
+                <!-- imagen -->
+                </div>
+            </div>
+            <div class="clima_Actual">
+                <img src="img/09n.png" alt="">
+                <div class="grados">
+                    <p id="grados_Actual">°C</p>
+                </div>
+                <h2 id="fecha_Actual">Monday, 16:00</h2>
+                <p id="clima_Actual"> Mostly Cloudy</p>
+                <p>Rian -30%</p>
+                <img src="img/rosario.jpg" alt="">
+            </div>
+        </section>
+        <section class="parteDerecha">
+            <div class="header">
+                <div class="enlaces">
+                    <a href="#">Today</a>
+                    <a href="#">Week</a>
+                </div>
+                <div class="datos">
+                    <a href="#" id="centigrados">°C</a>
+                    <a href="#" id="fahrenheit">°F</a>
+                    <!-- Imagen Usuario -->
+                </div>
+            </div>
+            <div class="diasSemanales">
+                <div class="dia">
+                    <h3>Sun</h3>
+                    <img src="img/01d.png" alt="">
+                    <div class="temperatura">
+                        <p id="grados1">15°</p>
+                    </div>
+                </div>
+                <div class="dia">
+                    <h3>Mon</h3>
+                    <img src="img/02d.png" alt="">
+                    <div class="temperatura">
+                        <p id="grados2">12°</p>
+                    </div>
+                </div>
+                <div class="dia">
+                    <h3>Tue</h3>
+                    <img src="img/03d.png" alt="">
+                    <div class="temperatura">
+                        <p id="grados3">9°</p>
+                    </div>
+                </div>
+                <div class="dia">
+                    <h3>Wed</h3>
+                    <img src="img/04d.png" alt="">
+                    <div class="temperatura">
+                        <p id="grados4">8°</p>
+                    </div>
+                </div>
+                <div class="dia">
+                    <h3>Thu</h3>
+                    <img src="img/50d.png" alt="">
+                    <div class="temperatura">
+                        <p id="grados5">5°</p>
+                    </div>
+                </div>
+                <div class="dia">
+                    <h3>Fri</h3>
+                   <img src="img/02d.png" alt="">
+                    <div class="temperatura">
+                        <p id="grados6">4°</p>
+                    </div>
+                </div>
+                <div class="dia">
+                    <h3>Sat</h3>
+                    <img src="img/01d.png" alt="">
+                    <div class="temperatura">
+                        <p id="grados7">3°</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacado">
+                <br>
+                <br>
+                <h2>Today's Highlights</h2>
+                <div class="informacion">
+                    <div class="informacion_destacada">
+                        <h3>UV Index</h3>
+                    </div>
+                    <div class="informacion_destacada">
+                        <h3>Wind Status</h3>
+                        <p id="estado_del_viento" style=" font-size:21px ">km/h</p>
+                        <div class="detalle">
+                            <!-- imagen -->
+                            <p>WSW</p>
+                        </div>
+                    </div>
+                    <div class="informacion_destacada">
+                        <h3>Sunrise & Sunset</h3>
+                        <p id="amanecer_Actual" style="font-size: 21px;">AM</p>
+                        <p id="atardecer_Actual" style="font-size: 21px;">PM</p>
+                    </div>
+                    <div class="informacion_destacada">
+                        <h3>Humidity</h3>
+                        <p id="humedad_Actual" style="font-size: 21px;">%</p>
+                        <div class="detalle">
+                            <p>Normal</p>
+                            <!-- imagen -->
+                        </div>
+                    </div>
+                <div class="informacion_destacada">
+                    <h3>Visibility</h3>
+                    <p id="visibilidad_Actual" style="font-size: 21px;">m</p>
+                    <div class="detalle">
+                        <p>Average</p>
+                        <!-- imagen -->
+                    </div>
+                </div>
+                <div class="informacion_destacada">
+                    <h3>Air Quality</h3>
+                    <div class="detalle">
+                        <p>Unhealthy</p>
+                        <!-- imagen -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+
+    
+</body>
+</html>
