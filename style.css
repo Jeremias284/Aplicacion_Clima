@@ -69,10 +69,9 @@ body{
 
 }
 
-/* .datos img{
 
-} */
 .clima_Actual h2{
+    font-family: Arial, Helvetica, sans-serif;
     margin: 50px 0px;
 }
 
@@ -187,7 +186,7 @@ body{
 }
 
 .informacion h3{
-    color: rgb(198, 198, 199);
+    color: rgb(0, 0, 0);
     
 }
 .informacion_destacada{
@@ -249,6 +248,7 @@ body{
 
 @media screen and (max-width: 320px){
     .informacion_destacada{
+
         width: 150px;
     }
 }

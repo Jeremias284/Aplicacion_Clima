@@ -12,16 +12,12 @@
         <section class="parteIzquierda" id="parteIzquierda">
             <div class="header" id="header">
                 <div class="buscador" id="header">
-                   <!-- Imegen -->
                    <form class="search_submit" id="search-form">
                     <input type="text" class="search" id="search_input" placeholder="Search for places...">
                     <button type="submit"></button>
                    </form>
-                   <!-- <input type="text" name="buscar" id="inputValor" placeholder="Search for places ..." value="Ingerese una ciudad...."> -->
-                   <!-- <input type="submit" value="Buscar" id="buscar" class="buscar"> -->
                 </div>
-                <div class="mira" id="mira">
-                <!-- imagen -->
+                <div class="lupa" id="lupa">
                 </div>
             </div>
             <div class="clima_Actual" id="clima_Actual">
@@ -44,7 +40,6 @@
                 <div class="datos">
                     <a href="#" id="centigrados">°C</a>
                     <a href="#" id="fahrenheit">°F</a>
-                    <!-- Imagen Usuario -->
                 </div>
             </div>
             <div class="diasSemanales">
@@ -104,14 +99,15 @@
                 <br>
                 <h2>Today's Highlights</h2>
                 <div class="informacion">
-                    <!-- <div class="informacion_destacada">
-                        <h3>UV Index</h3>
-                    </div> -->
+                    <div class="informacion_destacada">
+                        <h3>Temperature</h3>
+                        <p id="temperature_Min_Actual" style="font-size: 21px;"> °C Min</p>
+                        <p id="temperature_Max_Actual" style="font-size: 21px;"> °C Max</p>
+                    </div>
                     <div class="informacion_destacada">
                         <h3>Wind Status</h3>
                         <p id="viento_Actual" style=" font-size:21px ">km/h</p>
                         <div class="detalle">
-                            <!-- imagen -->
                             <p>WSW</p>
                         </div>
                     </div>
@@ -125,7 +121,6 @@
                         <p id="humedad_Actual" style="font-size: 21px;">%</p>
                         <div class="detalle">
                             <p>Normal</p>
-                            <!-- imagen -->
                         </div>
                     </div>
                 <div class="informacion_destacada">
@@ -133,16 +128,16 @@
                     <p id="visibilidad_Actual" style="font-size: 21px;">m</p>
                     <div class="detalle">
                         <p>Average</p>
-                        <!-- imagen -->
                     </div>
                 </div>
-                <!-- <div class="informacion_destacada" > -->
-                    <!-- <h3>Air Quality</h3> -->
-                    <!-- <div class="detalle"> -->
-                        <!-- <p>Unhealthy</p> -->
-                        <!-- imagen -->
-                    <!-- </div> -->
-                <!-- </div> -->
+                <div class="informacion_destacada" >
+                    <h3>Pressure</h3>
+                    <p id="presion_Actual" style="font-size: 21px;">Pa</p>
+                    <p></p>
+                    <div class="detalle">
+                        <p>Press</p>
+                    </div>
+                </div>
             </div>
         </div>
         </section>
