@@ -19,37 +19,8 @@ const temperaturaMaxima = document.getElementById('temperature_Max_Actual')
 const presion = document.getElementById('presion_Actual');
 
 
-//Convierto la hora para que se pueda entender
-let funcionAmanecer = (horaAmanecer)=>{
-    //Hora amanecer
-    let datosAmanecer = new Date(horaAmanecer.city.sunrise*1000).toLocaleString('es-AR',{
-        timeStyle: 'short',
-        dateStyle: 'long'
-    });
-    // console.log(datosAmanecer);
-    const dayHour = new Date(horaAmanecer.city.sunrise*1000).getHours();
-    console.log(dayHour);
-
-    amanecer.textContent = `${dayHour}  AM Sunrise `;
-}
-
-//Convierto la hora para que se pueda entender
-let funcionAtardecer = (horaAtardecer) => {
-      //Hora atardecer
-      let datosAtardecer = new Date(horaAtardecer.city.sunset*1000).toLocaleString('es-AR',{
-        timeStyle: 'short',
-        dateStyle: 'long'
-    });
-    // console.log(datosAtardecer);
-    const dayHours = new Date(horaAtardecer.city.sunset*1000).getHours();
-    console.log(dayHours);
-
-    atardecer.textContent = `${dayHours} PM Sunset`;
-}
-
-
 //Funcion General
-async function datosActual(objeto){
+async function datosActuales(objeto){
     try{
         const response = await fetch(`${api.url}?q=${objeto}&appid=${api.key}&lang=es`)
         const data = await response.json();
@@ -92,16 +63,44 @@ async function datosSemanales(lat, lon){
         })
 }
 
-//Funcion para convertir los grados
- function toCelsius(kelvin){
-     return Math.round(kelvin - 273.15);
-}
-
 function onSubmit(event){
     event.preventDefault();
-    datosActual(search_input.value);
+    datosActuales(search_input.value);
 }
 const form = document.getElementById('search-form');
 const search_input = document.getElementById('search_input');
 form.addEventListener('submit', onSubmit, true);
 
+
+//Funcion para convertir los grados
+function toCelsius(kelvin){
+    return Math.round(kelvin - 273.15);
+}
+
+//Convierto la hora para que se pueda entender
+let funcionAmanecer = (horaAmanecer)=>{
+    //Hora amanecer
+    let datosAmanecer = new Date(horaAmanecer.city.sunrise*1000).toLocaleString('es-AR',{
+        timeStyle: 'short',
+        dateStyle: 'long'
+    });
+    // console.log(datosAmanecer);
+    const dayHour = new Date(horaAmanecer.city.sunrise*1000).getHours();
+    console.log(dayHour);
+
+    amanecer.textContent = `${dayHour}  AM Sunrise `;
+}
+
+//Convierto la hora para que se pueda entender
+let funcionAtardecer = (horaAtardecer) => {
+      //Hora atardecer
+      let datosAtardecer = new Date(horaAtardecer.city.sunset*1000).toLocaleString('es-AR',{
+        timeStyle: 'short',
+        dateStyle: 'long'
+    });
+    // console.log(datosAtardecer);
+    const dayHours = new Date(horaAtardecer.city.sunset*1000).getHours();
+    console.log(dayHours);
+
+    atardecer.textContent = `${dayHours} PM Sunset`;
+}
