@@ -65,8 +65,13 @@ async function datosActual(objeto){
         funcionAmanecer(data);
         funcionAtardecer(data);
 
-        let lat = data.city.coord.lat;
-        let lon = data.city.coord.lon;
+        var traducirFecha = data.list[0].dt;
+        var date = new Date(traducirFecha * 1000);
+        var dia = date.getDate();
+        var mes = date.getMonth()+1;
+        var año = date.getFullYear();
+        var lat = data.city.coord.lat;
+        var lon = data.city.coord.lon;
         datosSemanales(lat, lon);
 
     }catch(err){
@@ -75,20 +80,16 @@ async function datosActual(objeto){
     }
 }
 //Funcion datos de la semana proxima
-async function datosSemanales(lat , lon){
+async function datosSemanales(lat, lon){
     const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&units=metric&appid=834c2ae38cefdca512c2bfc5629669b7')
     const data = await response.json();
-        console.log(data);
-        let datosDias = data.daily;
-        datosDias.forEach(function(informacionDia, indice){
-            let gradosActuales = document.querySelector('#grados' + indice);
-            let grado = (informacionDia.temp.day).toString();
-            gradosActuales.innerHTML = grado + '°C';
+    console.log(data);
+        data.daily.forEach(function(indormacionDia, indice) {
+            let gradoActual = document.getElementById('grados'+indice);
+            let grado = (indormacionDia.temp.day).toString(); 
+            gradoActual.innerHTML = grado + '°C';
         })
-       
 }
-
-
 
 //Funcion para convertir los grados
  function toCelsius(kelvin){
