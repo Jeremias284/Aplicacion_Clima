@@ -19,31 +19,31 @@ const presion = document.getElementById('presion_Actual');
 
 
 //Convierto la hora para que se pueda entender
-const funcionAmanecer = (horaAmanecer)=>{
+let funcionAmanecer = (horaAmanecer)=>{
     //Hora amanecer
     let datosAmanecer = new Date(horaAmanecer.city.sunrise*1000).toLocaleString('es-AR',{
         timeStyle: 'short',
         dateStyle: 'long'
     });
-    console.log(datosAmanecer);
+    // console.log(datosAmanecer);
     const dayHour = new Date(horaAmanecer.city.sunrise*1000).getHours();
     console.log(dayHour);
 
-    amanecer.textContent = `${dayHour}  AM`;
+    amanecer.textContent = `${dayHour}  AM Sunrise `;
 }
 
 //Convierto la hora para que se pueda entender
-const funcionAtardecer = (horaAtardecer) => {
+let funcionAtardecer = (horaAtardecer) => {
       //Hora atardecer
       let datosAtardecer = new Date(horaAtardecer.city.sunset*1000).toLocaleString('es-AR',{
         timeStyle: 'short',
         dateStyle: 'long'
     });
-    console.log(datosAtardecer);
+    // console.log(datosAtardecer);
     const dayHourss = new Date(horaAtardecer.city.sunset*1000).getHours();
     console.log(dayHourss);
 
-    atardecer.textContent = `${dayHourss} PM`;
+    atardecer.textContent = `${dayHourss} PM Sunset`;
 }
 
 
@@ -53,6 +53,7 @@ async function datosActual(objeto){
         const response = await fetch(`${api.url}?q=${objeto}&appid=${api.key}&lang=es`)
         const data = await response.json();
         console.log(data);
+
         //Muesto los valores al HTML
         grados.innerHTML = toCelsius(data.list[0].main.temp)+ '°C';
         viento.innerHTML = data.list[0].wind.speed + ' KM/H';
@@ -63,11 +64,31 @@ async function datosActual(objeto){
         presion.innerHTML =  data.list[0].main.pressure + ' Pa';
         funcionAmanecer(data);
         funcionAtardecer(data);
+
+        let lat = data.city.coord.lat;
+        let lon = data.city.coord.lon;
+        datosSemanales(lat, lon);
+
     }catch(err){
         console.log(err);
         alert('Hubo un error');
     }
 }
+//Funcion datos de la semana proxima
+async function datosSemanales(lat , lon){
+    const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&units=metric&appid=834c2ae38cefdca512c2bfc5629669b7')
+    const data = await response.json();
+        console.log(data);
+        let datosDias = data.daily;
+        datosDias.forEach(function(informacionDia, indice){
+            let gradosActuales = document.querySelector('#grados' + indice);
+            let grado = (informacionDia.temp.day).toString();
+            gradosActuales.innerHTML = grado + '°C';
+        })
+       
+}
+
+
 
 //Funcion para convertir los grados
  function toCelsius(kelvin){
@@ -82,19 +103,3 @@ const form = document.getElementById('search-form');
 const search_input = document.getElementById('search_input');
 form.addEventListener('submit', onSubmit, true);
 
-//Funcion datos de la semana proxima
-// async function datosSemanales(lat , lon){
-//     const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&units=metric&appid=834c2ae38cefdca512c2bfc5629669b7')
-//     const data = await response.json();
-//     try{
-//         console.log(data);
-//         data.daily.forEach(function(dayInfo , index){
-//             let grados_Actual = document.getElementById('grados_Actual' + index);
-//             let grado =(dayInfo.temp.day).toString();
-//             grados_Actual.innerHTML = grados + ' °C';
-//         })
-//     }catch(err){
-//         console.log(err);
-//         alert('Hubo un error');
-//     }
-// }
