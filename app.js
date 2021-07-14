@@ -4,6 +4,7 @@ const api = {
     url:`http://api.openweathermap.org/data/2.5/forecast`
 }
    
+
 //Elementos del DOM
 const grados = document.getElementById('grados_Actual');
 const clima = document.getElementById('clima_Actual');
@@ -40,10 +41,10 @@ let funcionAtardecer = (horaAtardecer) => {
         dateStyle: 'long'
     });
     // console.log(datosAtardecer);
-    const dayHourss = new Date(horaAtardecer.city.sunset*1000).getHours();
-    console.log(dayHourss);
+    const dayHours = new Date(horaAtardecer.city.sunset*1000).getHours();
+    console.log(dayHours);
 
-    atardecer.textContent = `${dayHourss} PM Sunset`;
+    atardecer.textContent = `${dayHours} PM Sunset`;
 }
 
 
