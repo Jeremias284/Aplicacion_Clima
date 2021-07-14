@@ -189,7 +189,7 @@ body{
     color: rgb(0, 0, 0);
     
 }
-.informacion_destacada{
+.datos_Actuales{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -247,7 +247,7 @@ body{
 }
 
 @media screen and (max-width: 320px){
-    .informacion_destacada{
+    .datos_Actuales{
 
         width: 150px;
     }
