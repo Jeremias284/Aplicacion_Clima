@@ -56,10 +56,11 @@ async function datosSemanales(lat, lon){
     const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&units=metric&appid=834c2ae38cefdca512c2bfc5629669b7')
     const data = await response.json();
     console.log(data);
-        data.daily.forEach(function(indormacionDia, indice) {
-            let gradoActual = document.getElementById('grados'+indice);
-            let grado = (indormacionDia.temp.day).toString(); 
+        data.daily.forEach(function(informacionDia, i) {
+            let gradoActual = document.getElementById('grados' + i);
+            let grado = (informacionDia.temp.day).toString(); 
             gradoActual.innerHTML = grado + '°C';
+          
         })
 }
 
